@@ -1,3 +1,0 @@
-if evento.type == pygame.MOUSEBUTTONDOWN:
-    if botao_rect.collidepoint(evento.pos):
-        print("Botão clicado!")
