@@ -1,9 +1,11 @@
-# TODO Organizar melhjor o código
+# TODO Organizar melhor o código
 
 import pygame #pip install pygame
 import sys
 
 pygame.init()
+
+# TODO Deixar o tamanho da janela do jogo responsiva com o tamanho do monitor
 
 # Configurações da janela
 largura, altura = 480, 640
