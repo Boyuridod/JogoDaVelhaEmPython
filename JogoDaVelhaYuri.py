@@ -2,11 +2,21 @@
 # Desenvolvido por: Yuri David Silva Duarte
 # Instagram @yuridsduarte
 
-# python -m PyInstaller --onefile --windowed --icon=path JogoDaVelhaYuri.py
+# python -m PyInstaller --onefile --windowed --icon=Images/favicon.ico --add-data "Images;Images" JogoDaVelhaYuri.py
+# python -m PyInstaller --onefile --windowed --icon=Images/favicon.ico --add-data 'Images;"Images"' JogoDaVelhaYuri.py
 
 import pygame #pip install pygame
+import os
 import sys
 import tkinter as tk
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS  # Diretório temporário criado pelo PyInstaller
+    except AttributeError:
+        base_path = os.path.abspath(".")  # Modo normal (sem empacotar)
+
+    return os.path.join(base_path, relative_path)
 
 # Pega o tamanho da tela com tkinter (sem abrir janela)
 root = tk.Tk()
@@ -21,7 +31,13 @@ pygame.init()
 larguraJogo = largura * 0.2
 alturaJogo = altura * 0.5
 tela = pygame.display.set_mode((larguraJogo, alturaJogo))
-pygame.display.set_caption("Jogo da Velha")
+pygame.display.set_caption("Jogo da Velha | Por: Yuri Duarte")
+
+# Carrega o ícone (formato PNG recomendado)
+icone = pygame.image.load(resource_path("Images/Icone.png"))
+
+# Define o ícone da janela
+pygame.display.set_icon(icone)
 
 # Cores
 preto = (10, 10, 10)
