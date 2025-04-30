@@ -2,7 +2,6 @@
 # Desenvolvido por: Yuri David Silva Duarte
 # Instagram @yuridsduarte
 
-# python -m PyInstaller --onefile --windowed --icon=Images/favicon.ico --add-data "Images;Images" JogoDaVelhaYuri.py
 # python -m PyInstaller --onefile --windowed --icon=Images/favicon.ico --add-data 'Images;"Images"' JogoDaVelhaYuri.py
 
 import pygame #pip install pygame
